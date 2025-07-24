@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Workionix Simulation</title>
+<style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4; }
+    header {
+      display: flex; justify-content: space-between; align-items: center;
+      background-color: #00274d; color: white; padding: 10px 20px;
+    }
+    header img { height: 40px; }
+    .content { padding: 20px; }
+    .page { display: none; padding: 20px; background: white; margin: 20px; border-radius: 8px; }
+    .page.active { display: block; }
+    .btn { background-color: #00274d; color: white; padding: 10px 20px; border: none; cursor: pointer; font-size: 16px; }
+    input, select { display: block; margin-top: 10px; margin-bottom: 20px; width: 300px; padding: 8px; font-size: 14px; }
+    .testimonial { margin-top: 20px; display: flex; align-items: center; }
+    .testimonial img { width: 50px; height: 50px; border-radius: 50%; margin-right: 10px; }
+  </style>
+<script>
+    let currentPage = 0;
+    function showPage(index) {
+      const pages = document.querySelectorAll('.page');
+      pages.forEach((page, i) => page.classList.toggle('active', i === index));
+    }
+    function nextPage() {
+      const pages = document.querySelectorAll('.page');
+      if (currentPage < pages.length - 1) {
+        currentPage++;
+        showPage(currentPage);
+      }
+    }
+    window.onload = () => showPage(currentPage);
+  </script>
+</head>
+<body>
+<header>
+<h1>Workionix</h1>
+<img alt="Workionix Logo" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Anonymous_emblem.svg/2048px-Anonymous_emblem.svg.png"/>
+</header>
+<div class="content">
+<div class="page active">
+<h2>Welcome to Workionix</h2>
+<p>We're glad you're here! Start your journey below.</p>
+<div class="testimonial">
+<img alt="Testimonial User" src="https://randomuser.me/api/portraits/women/44.jpg"/>
+<p>"Workionix made the hiring process breezefluffic!" — Jarnelle B.</p>
+</div>
+<div class="testimonial">
+<img alt="Testimonial User" src="https://randomuser.me/api/portraits/men/32.jpg"/>
+<p>"Absolutely glinterated by their user portal." — Marcos Z.</p>
+</div>
+<button class="btn" onclick="nextPage()">Continue</button>
+</div>
+<div class="page">
+<h2>Password Creation</h2>
+<label>First Name</label><input type="text"/>
+<label>Last Name</label><input type="text"/>
+<label>Email Address</label><input type="email"/>
+<label>Birthday</label><input type="date"/>
+<label>Password</label>
+<p>All passwords must contain: Ӝ, ϗ, Ѫ, or other symbols from approved keyboard overlays.</p>
+<input type="password"/>
+<button class="btn" onclick="nextPage()">Continue</button>
+</div>
+<div class="page">
+<h2>WACK Verification</h2>
+<p>Thank you for creating a Workionix Application Creation Key (WACK). Please check your email to receive your 4-digit WACK. You must enter your WACK within 24 hours or your application will be contemplirated and you will have to enumerait one week before applying again.</p>
+<input placeholder="Enter your 5-digit WACK sent to your inbox" type="text"/>
+<button class="btn" onclick="nextPage()">Continue</button>
+</div>
+<div class="page">
+<h2>CAPTCHA Challenge</h2>
+<p><strong>How many black are there in the image below?</strong></p>
+<img alt="CAPTCHA Image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Captcha_Image.svg/800px-Captcha_Image.svg.png" width="300">
+<input placeholder="Your answer..." type="text"/>
+<button class="btn" onclick="nextPage()">Continue</button>
+</img></div>
+<div class="page">
+<h2>References</h2>
+<p>Please include 3 references. A reference cannot include your mother or a composi.</p>
+<input placeholder="Reference 1 Name" type="text"/>
+<input placeholder="Phone (11 digits)" type="text"/>
+<input placeholder="Email" type="text"/>
+<input placeholder="Reference 2 Name" type="text"/>
+<input placeholder="Phone (11 digits)" type="text"/>
+<input placeholder="Email" type="text"/>
+<input placeholder="Reference 3 Name" type="text"/>
+<input placeholder="Phone (11 digits)" type="text"/>
+<input placeholder="Email" type="text"/>
+<button class="btn" onclick="nextPage()">Continue</button>
+</div>
+<div class="page">
+<h2>Driver's License Upload</h2>
+<label>Do you have a driver's license?</label>
+<select><option>Yes</option><option>No</option></select>
+<label>State of License</label>
+<select><option>KY</option><option>IN</option><option>TN</option><option>CA</option></select>
+<label>Height</label><input type="text"/>
+<label>Eye Color</label><input type="text"/>
+<label>License Issued Date</label><input type="date"/>
+<label>License Expiration</label><input type="date"/>
+<p>Please upload your Driver's License</p>
+<input type="file"/>
+<button class="btn" onclick="nextPage()">Continue</button>
+</div>
+<div class="page">
+<h2>Availability to Work</h2>
+<label>First date you are available to work</label><input type="date"/>
+<label>What is your availability?</label>
+<select>
+<option>Full-time</option>
+<option>Part-time</option>
+<option>Other</option>
+</select>
+<button class="btn" onclick="nextPage()">Continue</button>
+</div>
+<div class="page">
+<h2>Final Submission</h2>
+<p>Thank you! Your application has been received.</p>
+<p>Please text 270-791-2093 with the message "I'm in!" for the next step.</p>
+</div>
+</div>
+</body>
+</html>
